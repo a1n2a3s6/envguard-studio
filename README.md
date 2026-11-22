@@ -1,16 +1,19 @@
 <div align="center">
 
-# 🛡️ EnvGuard Studio
+<h1>🛡️ EnvGuard Studio</h1>
 
-### 100% Local-First `.env` Secrets Auditor, Env Diff Checker & Type-Safe Schema Generator
+<h3>100% Local-First <code>.env</code> Secrets Auditor, Multi-Env Diff Checker &amp; Type-Safe Schema Generator</h3>
 
-*Catch leaked API keys, prevent `VITE_` / `NEXT_PUBLIC_` client-bundle exposures, diff `.env.local` vs `.env.production`, sanitize `.env.example`, and generate Zod & TypeScript env schemas — all offline in your browser.*
+<p>
+  <em>Catch leaked API keys, block <code>VITE_</code> &amp; <code>NEXT_PUBLIC_</code> client-bundle exposures, diff <code>.env.local</code> vs <code>.env.production</code>, sanitize <code>.env.example</code>, and generate Zod &amp; TypeScript schemas — completely offline in your browser.</em>
+</p>
 
 <p>
   <img src="https://img.shields.io/badge/365%20Days%20Challenge-Day%208%2F365-10B981?style=for-the-badge" alt="Day 8/365" />
   <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 18" />
-  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Privacy-100%25%20Offline%20%2F%20Zero%20Backend-059669?style=for-the-badge" alt="100% Offline" />
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript 5" />
+  <img src="https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite 5" />
+  <img src="https://img.shields.io/badge/Privacy-100%25%20Offline-059669?style=for-the-badge" alt="100% Offline" />
 </p>
 
 <p>
@@ -24,34 +27,36 @@
 </p>
 
 <p>
-  <a href="https://envguard-studio.vercel.app/"><strong>🚀 Live Demo</strong></a> •
-  <a href="#-the-problem-it-solves"><strong>🎯 Why EnvGuard</strong></a> •
-  <a href="#-key-features"><strong>✨ Features</strong></a> •
-  <a href="#-how-it-works"><strong>🏗️ Architecture</strong></a> •
-  <a href="#-quick-start"><strong>⚡ Quick Start</strong></a>
+  <a href="https://envguard-studio.vercel.app/"><strong>🚀 Live Demo</strong></a> &nbsp;•&nbsp;
+  <a href="#-why-envguard-studio"><strong>🎯 Why EnvGuard</strong></a> &nbsp;•&nbsp;
+  <a href="#-key-features"><strong>✨ Features</strong></a> &nbsp;•&nbsp;
+  <a href="#-architecture"><strong>🏗️ Architecture</strong></a> &nbsp;•&nbsp;
+  <a href="#-quick-start"><strong>⚡ Quick Start</strong></a> &nbsp;•&nbsp;
+  <a href="#-one-click-deploy"><strong>☁️ Deploy</strong></a>
 </p>
 
 </div>
 
 ---
 
-## 🎯 The Problem It Solves
+## 🎯 Why EnvGuard Studio?
 
 Every developer has been burned by `.env` files at least once:
-- Accidentally shipping a `NEXT_PUBLIC_` or `VITE_` secret key straight into the public frontend bundle.
-- Pushing to production and crashing the app because one key in `.env.local` was missing from `.env.production`.
-- Spending 20 minutes manually scrubbing secrets out of `.env` to update `.env.example` or hand-writing Zod validation schemas.
 
-**EnvGuard Studio** fixes all of these in seconds — with **zero servers, zero analytics, and zero network requests**, so your secrets never leave your device.
+- **Silent Client Leaks:** Accidentally prefixing a secret key with `NEXT_PUBLIC_` or `VITE_` and shipping it straight into the public browser bundle.
+- **Broken Production Deploys:** Pushing code to Vercel or Docker only to crash at runtime because a key in `.env.local` was missing from `.env.production`.
+- **Tedious Manual Scrubbing:** Wasting 20 minutes manually stripping credentials to update `.env.example` or hand-writing Zod & TypeScript validation schemas.
 
-| Capability | 🛡️ EnvGuard Studio | Manual `.env` Management |
+> **🔒 Zero-Network Guarantee:** EnvGuard Studio runs **100% locally in your browser's memory**. Zero servers, zero telemetry, zero network requests — your secrets never leave your machine.
+
+| Capability | 🛡️ EnvGuard Studio | Manual `.env` Workflow |
 | :--- | :---: | :---: |
 | **Detects Leaked AWS / Stripe / OpenAI / GitHub / DB Secrets** | ✅ Instant | ❌ Easy to miss |
 | **Catches `VITE_` & `NEXT_PUBLIC_` Client Exposure Bugs** | ✅ Automatic | ❌ Silent leak |
 | **Side-by-Side `.env.local` vs `.env.production` Diff** | ✅ Visual | ❌ Error-prone |
-| **1-Click Safe `.env.example` Sanitizer (Keeps Comments)** | ✅ Instant | ❌ Manual scrubbing |
-| **Auto-Generates Zod (`env.ts`) & TypeScript (`env.d.ts`)** | ✅ 1-Click | ❌ Tedious boilerplate |
-| **100% Client-Side Offline Privacy** | ✅ Zero Network | ✅ Local |
+| **1-Click Safe `.env.example` Sanitizer (Preserves Comments)** | ✅ Instant | ❌ Manual scrubbing |
+| **Auto-Generates Zod (`env.ts`), TS (`env.d.ts`) & Docker Env** | ✅ 1-Click | ❌ Repetitive boilerplate |
+| **Screen-Share Secret Masking (Blur Values)** | ✅ Built-in | ❌ Risky on calls |
 
 ---
 
@@ -60,56 +65,75 @@ Every developer has been burned by `.env` files at least once:
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🚨 Deep Secret & Leak Auditor</h3>
-      <p>Scans for real-world credential patterns (OpenAI, Stripe, AWS, GitHub, Slack, JWTs, DB connection strings with passwords) and flags critical <code>NEXT_PUBLIC_</code> / <code>VITE_</code> secret exposure risks with a 0–100 Health Score.</p>
+      <h3>🚨 Deep Secret &amp; Leak Auditor</h3>
+      <p>Scans for real-world credential patterns (OpenAI, Stripe, AWS, GitHub, Slack, JWTs, DB URLs with passwords) and flags critical <code>NEXT_PUBLIC_</code> / <code>VITE_</code> exposure risks with an instant <b>0–100 Health Score</b>.</p>
     </td>
     <td width="50%" valign="top">
       <h3>🔀 Multi-Environment Diff Engine</h3>
-      <p>Compare <code>.env.local</code> against <code>.env.production</code> or <code>.env.example</code> to immediately spot missing production variables, empty keys, and shadowed duplicates before deploying.</p>
+      <p>Compare <code>.env.local</code> against <code>.env.production</code> or <code>.env.example</code> side-by-side to catch missing production variables, empty values, and shadowed duplicate keys before deploying.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🧼 Smart `.env.example` Sanitizer</h3>
-      <p>Automatically strips sensitive values into clean descriptive placeholders while preserving all comments, section headers, and safe non-secret defaults like <code>PORT</code> or <code>NODE_ENV</code>.</p>
+      <h3>🧼 Smart <code>.env.example</code> Sanitizer</h3>
+      <p>Automatically strips sensitive values into clean descriptive placeholders (e.g. <code>YOUR_STRIPE_SECRET_KEY</code>) while preserving all comments, section headers, and safe defaults like <code>PORT</code>.</p>
     </td>
     <td width="50%" valign="top">
       <h3>⚡ Type-Safe Code Generators</h3>
-      <p>Infers variable types (URL, Port, Number, Boolean, Email, Secret) and exports ready-to-paste <b>Zod schemas</b>, <b>TypeScript <code>env.d.ts</code></b>, and <b>Docker Compose</b> env blocks.</p>
+      <p>Infers variable types (URL, Port, Number, Boolean, Email, Secret) and generates copy-ready <b>Zod schemas</b>, <b>TypeScript <code>env.d.ts</code></b>, and <b>Docker Compose</b> env blocks.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <h3>👁️ Screen-Share Secret Masking</h3>
-      <p>Toggle <b>Mask Secrets</b> with one click to blur sensitive values in the editor — safe for live demos, pair programming, and screen recordings.</p>
+      <p>Toggle <b>Mask Secrets</b> in one click to blur sensitive values directly in the editor — ideal for live demos, pair programming, and screen recordings.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>🔒 Zero-Network Guarantee</h3>
-      <p>Runs 100% locally in your browser's JavaScript engine. You can disconnect from the internet and EnvGuard Studio continues working without missing a beat.</p>
+      <h3>🔒 100% Offline Privacy</h3>
+      <p>Disconnect your Wi-Fi and EnvGuard Studio keeps working identically. All parsing, auditing, diffing, and code generation execute purely in client-side TypeScript.</p>
     </td>
   </tr>
 </table>
 
 ---
 
-## 🏗️ How It Works
+## 🔍 Built-In Security & Lint Rules
+
+| Severity | Rule | What It Catches |
+| :---: | :--- | :--- |
+| 🔴 **Critical** | `SECRET_PATTERN` | Live OpenAI (`sk-...`), Stripe (`sk_live_...`), AWS (`AKIA...`), GitHub (`ghp_...`), Slack, JWTs & DB passwords |
+| 🔴 **Critical** | `CLIENT_EXPOSURE` | Secret/token/password keys prefixed with `VITE_`, `NEXT_PUBLIC_`, or `REACT_APP_` |
+| 🟡 **Warning** | `DUPLICATE_KEY` | Repeated keys in the same `.env` file silently overriding earlier values |
+| 🟡 **Warning** | `SYNTAX_HAZARD` | Unquoted values with spaces, trailing whitespace, or empty required keys |
+| 🔵 **Info** | `NAMING_HYGIENE` | Lowercase keys or insecure `http://` URLs inside production-named variables |
+
+---
+
+## 🏗️ Architecture
 
 ```mermaid
 flowchart LR
     A["📄 Drop or Paste .env Files\n(100% In-Browser Memory)"] --> B["⚙️ Custom .env Parser\n(Quotes • Comments • Line Map)"]
-    B --> C["🛡️ Security & Lint Auditor\n(Secret Regex • Client Prefix Check)"]
+    B --> C["🛡️ Security & Lint Auditor\n(Secret Regex • Client Prefix Guard)"]
     B --> D["🔀 Multi-Env Diff Engine\n(.env.local vs .env.production)"]
     B --> E["⚡ Type-Inference Engine\n(URL • Port • Bool • Secret)"]
     E --> F["🧼 Safe .env.example"]
     E --> G["📘 Zod env.ts & TS env.d.ts"]
     E --> H["🐳 Docker Compose Env"]
+```
 
-📂 Project Structure
-Plaintext
+---
+
+## 📂 Project Structure
+
+<details>
+<summary><b>Click to expand modular folder structure</b></summary>
+
+```text
 envguard-studio/
 ├── src/
 │   ├── types/
-│   │   └── env.ts              # Domain models for parsed lines, audits & diffs
+│   │   └── env.ts              # Strict TypeScript domain models
 │   ├── engine/
 │   │   ├── parser.ts           # Line-accurate .env parser
 │   │   ├── auditor.ts          # Secret detector, client-prefix guard & linter
@@ -128,42 +152,78 @@ envguard-studio/
 ├── package.json
 ├── tsconfig.json
 └── vite.config.ts
+```
+
+</details>
+
 ---
-⚡ Quick Start (Local Development)
-Bash
+
+## ⚡ Quick Start
+
+```bash
 # 1. Clone the repository
 git clone [https://github.com/a1n2a3s6/envguard-studio.git](https://github.com/a1n2a3s6/envguard-studio.git)
 
-# 2. Navigate into the directory
+# 2. Enter the project directory
 cd envguard-studio
 
 # 3. Install dependencies
 npm install
 
-# 4. Run locally
+# 4. Launch the development server
 npm run dev
-☁️ One-Click Deploy
-Host your own private instance on Vercel in seconds:
+```
 
-🗺️ Roadmap
-[x] Real-time secret leak detection (AWS, Stripe, OpenAI, GitHub, Slack, JWT, DB URLs)
+---
 
-[x] NEXT_PUBLIC_ / VITE_ / REACT_APP_ client-bundle leak guard
+## ☁️ One-Click Deploy
 
-[x] Side-by-side multi-environment diff checker
+Deploy your own private instance of **EnvGuard Studio** to Vercel in under 60 seconds:
 
-[x] Safe .env.example, Zod, TypeScript env.d.ts, and Docker Compose generators
+<p>
+  <a href="https://vercel.com/new/clone?repository-url=https://github.com/a1n2a3s6/envguard-studio">
+    <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+  </a>
+</p>
 
-[ ] Shannon entropy scanner for unknown custom API tokens
+---
 
-[ ] Export to Vercel CLI & GitHub Actions Secrets format
+## 🗺️ Roadmap
 
-[ ] Companion npx envguard check CLI package
+- [x] Real-time secret leak detection (AWS, Stripe, OpenAI, GitHub, Slack, JWT, DB URLs)
+- [x] `NEXT_PUBLIC_` / `VITE_` / `REACT_APP_` client-bundle leak guard
+- [x] Side-by-side multi-environment diff checker
+- [x] Safe `.env.example`, Zod, TypeScript `env.d.ts`, and Docker Compose generators
+- [ ] Shannon entropy scanner for unknown high-entropy API tokens
+- [ ] Export to Vercel CLI & GitHub Actions Secrets format
+- [ ] Companion `npx envguard check` CLI package
 
-📄 License
-Distributed under the MIT License. Free to use, modify, and self-host.
+---
 
-👨‍💻 Author & Connect
-Built with passion by Anas Alhelaly — Day 8 of my 365 Projects in 365 Days GitHub Challenge
+## 📄 License
 
-⭐ If EnvGuard Studio saved you from a .env bug or leaked key, give the repo a Star! ⭐
+Distributed under the **MIT License**. Free to use, modify, and self-host.
+
+---
+
+<div align="center">
+
+<h3>👨‍💻 Author &amp; Connect</h3>
+
+<p>Built with passion by <strong>Anas Alhelaly</strong> — <em>Day 8 of my <strong>365 Projects in 365 Days</strong> GitHub Challenge</em></p>
+
+<p>
+  <a href="https://anas-alhelaly.vercel.app/">
+    <img src="https://img.shields.io/badge/Portfolio-anas--alhelaly.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+  </a>
+  <a href="https://github.com/a1n2a3s6">
+    <img src="https://img.shields.io/badge/GitHub-a1n2a3s6-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  <a href="https://www.instagram.com/anas.alhelaly/">
+    <img src="https://img.shields.io/badge/Instagram-@anas.alhelaly-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  </a>
+</p>
+
+<p>⭐ <strong>If EnvGuard Studio saved you from a <code>.env</code> bug or leaked key, consider giving the repo a Star!</strong> ⭐</p>
+
+</div>
