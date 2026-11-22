@@ -94,7 +94,7 @@ Every developer has been burned by `.env` files at least once:
 
 ## 🏗️ How It Works
 
-
+```mermaid
 flowchart LR
     A["📄 Drop or Paste .env Files\n(100% In-Browser Memory)"] --> B["⚙️ Custom .env Parser\n(Quotes • Comments • Line Map)"]
     B --> C["🛡️ Security & Lint Auditor\n(Secret Regex • Client Prefix Check)"]
@@ -103,7 +103,6 @@ flowchart LR
     E --> F["🧼 Safe .env.example"]
     E --> G["📘 Zod env.ts & TS env.d.ts"]
     E --> H["🐳 Docker Compose Env"]
----
 
 📂 Project Structure
 Plaintext
