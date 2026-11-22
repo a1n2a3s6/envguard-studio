@@ -103,6 +103,8 @@ flowchart LR
     E --> F["🧼 Safe .env.example"]
     E --> G["📘 Zod env.ts & TS env.d.ts"]
     E --> H["🐳 Docker Compose Env"]
+---
+
 📂 Project Structure
 Plaintext
 envguard-studio/
@@ -127,6 +129,7 @@ envguard-studio/
 ├── package.json
 ├── tsconfig.json
 └── vite.config.ts
+---
 ⚡ Quick Start (Local Development)
 Bash
 # 1. Clone the repository
